@@ -1,0 +1,20 @@
+# www.besyn.nl
+# Alle zoekmachines (Google, Bing, DuckDuckGo, Ecosia, Startpage) zijn welkom.
+User-agent: *
+Allow: /
+
+# AI-zoekmachines en -assistenten (ChatGPT, Perplexity, Claude, Gemini, Copilot, Apple):
+# expliciet toegestaan, zodat BESYN genoemd kan worden in AI-antwoorden (GEO).
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.besyn.nl/sitemap.xml

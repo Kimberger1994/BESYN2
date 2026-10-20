@@ -1,0 +1,144 @@
+# ============================================================
+#  www.besyn.nl — Netlify-configuratie
+#  Statische site: geen build-stap nodig.
+# ============================================================
+
+[build]
+  publish = "site"
+  command = ""
+
+# ---------- Eventueel tweede domein kimberger.nl → profielpagina (301) ----------
+# Werkt pas als kimberger.nl als extra domein aan deze Netlify-site is gekoppeld.
+[[redirects]]
+  from = "https://kimberger.nl/*"
+  to = "https://www.besyn.nl/kim-berger/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.kimberger.nl/*"
+  to = "https://www.besyn.nl/kim-berger/"
+  status = 301
+  force = true
+
+# ---------- Oude Squarespace-pagina's → nieuwe pagina's (behoudt Google-waarde) ----------
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/coaching-mediation"
+  to = "/executive-coaching/"
+  status = 301
+
+[[redirects]]
+  from = "/trajecten"
+  to = "/executive-coaching/"
+  status = 301
+
+[[redirects]]
+  from = "/over-mij"
+  to = "/kim-berger/"
+  status = 301
+
+[[redirects]]
+  from = "/over-mij-1"
+  to = "/kim-berger/"
+  status = 301
+
+[[redirects]]
+  from = "/expertises"
+  to = "/kim-berger/"
+  status = 301
+
+# Organisatie-, optimalisatie- en M&A-vraagstukken lopen via HUMA Advisory;
+# de homepage legt dat uit en linkt door.
+[[redirects]]
+  from = "/bedrijfsoptimalisatie"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/cart"
+  to = "/"
+  status = 301
+
+# ---------- Eerdere conceptadressen en logische korte adressen ----------
+# force = true: werkt ook als er nog een oude map met die naam in de repository staat.
+[[redirects]]
+  from = "/coaching"
+  to = "/executive-coaching/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/coaching/*"
+  to = "/executive-coaching/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mediation"
+  to = "/zakelijke-mediation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mediation/*"
+  to = "/zakelijke-mediation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/over-kim"
+  to = "/kim-berger/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/over-kim/*"
+  to = "/kim-berger/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq"
+  to = "/veelgestelde-vragen/"
+  status = 301
+
+[[redirects]]
+  from = "/over"
+  to = "/kim-berger/"
+  status = 301
+
+# ---------- Headers ----------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
