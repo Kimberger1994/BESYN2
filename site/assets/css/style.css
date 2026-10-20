@@ -598,3 +598,34 @@ body.on-dark { background: var(--petrol); color: rgba(245, 245, 245, 0.9); }
 .results__col { padding: clamp(24px, 3.5vw, 36px); border: 1px solid var(--line-dark); border-top: 3px solid var(--gold); border-radius: 0 0 var(--radius) var(--radius); background: rgba(245, 245, 245, 0.05); }
 .results__col .checklist { margin-bottom: 0; }
 @media (max-width: 760px) { .results { grid-template-columns: 1fr; } }
+
+/* Fixes na controle live-site */
+.page-hero__grid, .page-hero--simple .page-hero__grid { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 861px) { .page-hero__grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr); } .page-hero--simple .page-hero__grid { grid-template-columns: minmax(0, 1fr); } }
+h1, h2 { overflow-wrap: break-word; }
+@media (max-width: 420px) { h1 { hyphens: auto; } }
+@media (max-width: 860px) { .hero__badge { right: 0; bottom: -5%; } }
+
+/* Contactpagina: compacte kop, formulier direct zichtbaar, rustige zijkolom */
+.page-hero--compact .page-hero__grid { padding-block: clamp(40px, 6vw, 72px) clamp(40px, 6vw, 64px); }
+.page-hero--compact h1 { font-size: clamp(2.2rem, 1.5rem + 3vw, 3.6rem); }
+.page-hero--compact .btn-row { margin-top: 1.4rem; }
+.contact-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr); gap: clamp(22px, 3vw, 36px); }
+.form-card { padding: clamp(24px, 3.5vw, 44px); }
+.form-card .h3 { margin-bottom: 1.2rem; }
+.form__row { align-items: end; }
+.field input, .field select { height: 50px; }
+.form__footer { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 4px; }
+.form__footer p { flex: 1 1 220px; }
+.contact-aside { padding: clamp(22px, 3vw, 32px); }
+.contact-aside .h3 { font-size: 1.2rem; margin: 0 0 0.9rem; }
+.contact-person { display: flex; align-items: center; gap: 14px; padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+.contact-person img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; flex: none; }
+.contact-person p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.35; }
+.contact-person strong { display: block; font-family: var(--serif); font-size: 1.1rem; color: var(--petrol); }
+.contact-aside .mini-steps { margin-bottom: 1.4rem; font-size: 0.95rem; }
+.panel .contact-list li, .panel .contact-list li:last-child { border-color: var(--line); padding: 12px 0; }
+.panel .contact-list span { color: var(--teal-ink); }
+.panel .contact-list a { font-size: 1.02rem; overflow-wrap: anywhere; }
+.panel .contact-list li { color: var(--ink); font-size: 0.95rem; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }

@@ -1,17 +1,21 @@
-<section class="page-hero page-hero--simple watermark on-dark" aria-labelledby="page-title">
+<section class="page-hero page-hero--simple page-hero--compact watermark on-dark" aria-labelledby="page-title">
   <div class="container page-hero__grid">
     <div>
       {{BREADCRUMBS}}
       <p class="eyebrow">Contact</p>
       <h1 id="page-title">Plan een <em>kennismaking</em></h1>
-      <p class="lead">Wilt u een vraagstuk bespreken of verkennen wat executive coaching of mediation voor u kan betekenen? Stuur een bericht of bel direct. Kim Berger neemt persoonlijk contact met u op.</p>
+      <p class="lead">Vrijblijvend en vertrouwelijk. Vul het formulier in of neem direct contact op. Kim Berger neemt persoonlijk contact met u op.</p>
+      <div class="btn-row">
+        <a class="btn btn--gold" href="tel:+31620050351">Bel&nbsp;06&nbsp;2005&nbsp;0351</a>
+        <a class="btn btn--ghost" href="mailto:k.berger@huma-advisory.com">Stuur een e-mail</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" aria-label="Contactformulier en gegevens">
+<section class="section section--tight" aria-label="Contactformulier">
   <div class="container contact-grid">
-    <div class="panel">
+    <div class="panel form-card" id="formulier">
       <h2 class="h3">Stuur een bericht</h2>
       <form class="form" name="contact" method="POST" action="/contact/bedankt/" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact">
@@ -25,14 +29,14 @@
             <input id="naam" name="naam" type="text" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="organisatie">Organisatie en functie <span class="optional">(optioneel)</span></label>
-            <input id="organisatie" name="organisatie" type="text" autocomplete="organization">
+            <label for="email">E-mailadres</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
         </div>
         <div class="form__row">
           <div class="field">
-            <label for="email">E-mailadres</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
+            <label for="organisatie">Organisatie <span class="optional">(optioneel)</span></label>
+            <input id="organisatie" name="organisatie" type="text" autocomplete="organization">
           </div>
           <div class="field">
             <label for="telefoon">Telefoon <span class="optional">(optioneel)</span></label>
@@ -52,32 +56,30 @@
           <label for="bericht">Uw vraag</label>
           <textarea id="bericht" name="bericht" rows="6" required placeholder="Beschrijf kort uw vraagstuk. Vertrouwelijke details bespreken we liever persoonlijk."></textarea>
         </div>
-        <p class="muted mb-0"><small>Uw gegevens worden uitsluitend gebruikt om op uw bericht te reageren. Zie de <a href="/privacyverklaring/">privacyverklaring</a>.</small></p>
-        <div>
+        <div class="form__footer">
           <button class="btn btn--petrol" type="submit">Verstuur bericht</button>
+          <p class="muted mb-0"><small>Uw gegevens worden alleen gebruikt om op uw bericht te reageren. Zie de <a href="/privacyverklaring/">privacyverklaring</a>.</small></p>
         </div>
       </form>
     </div>
-    <aside aria-label="Contactgegevens">
+
+    <aside class="panel contact-aside" aria-label="Wat u kunt verwachten">
+      <div class="contact-person">
+        <img src="/images/kim-berger-contact.jpg" alt="Kim Berger van BESYN" width="882" height="1102" loading="lazy">
+        <p><strong>Kim Berger</strong>Executive coach &amp; mediator</p>
+      </div>
+      <h2 class="h3">Wat u kunt verwachten</h2>
+      <ol class="mini-steps">
+        <li>U stuurt een bericht of belt.</li>
+        <li>Kim Berger neemt persoonlijk contact met u op.</li>
+        <li>Een vrijblijvende kennismaking in Utrecht, op uw locatie of online.</li>
+        <li>Daarna ontvangt u een voorstel op maat.</li>
+      </ol>
       <ul class="contact-list">
         <li><span>Telefoon</span><a href="tel:+31620050351">06&nbsp;2005&nbsp;0351</a></li>
         <li><span>E-mail</span><a href="mailto:k.berger@huma-advisory.com">k.berger@huma-advisory.com</a></li>
-        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/kimbergerexitready/" rel="noopener">Kim Berger</a></li>
-        <li><span>Adres</span>Van Esveldstraat 31-1, 3572 KK Utrecht. Gesprekken vinden plaats in Utrecht, op uw locatie of online.</li>
-        <li><span>Bedrijfsgegevens</span>Berger Advisory Holding B.V., handelend onder de naam BESYN<br>KvK 42003724 · btw NL869238772B01</li>
-        <li><span>Ook via</span><a href="https://www.huma-advisory.com/" rel="noopener">HUMA Advisory ↗</a></li>
+        <li><span>Werkgebied</span>Utrecht, Randstad en online</li>
       </ul>
-      <div class="panel panel--ivory mt-2">
-        <p class="eyebrow">Wat u kunt verwachten</p>
-        <ol class="mini-steps">
-          <li>U stuurt een bericht of belt.</li>
-          <li>Kim Berger neemt persoonlijk contact op voor een vrijblijvende kennismaking.</li>
-          <li>Na de kennismaking ontvangt u een voorstel op maat.</li>
-        </ol>
-      </div>
-      <div class="media media--portrait mt-2">
-        <img src="/images/kim-berger-contact.jpg" alt="Kim Berger van BESYN aan de telefoon" width="882" height="1102" loading="lazy">
-      </div>
     </aside>
   </div>
 </section>

@@ -9,7 +9,7 @@ Gebruik (in de map besyn-website):  python3 bron/build.py
 - Pas een FAQ-antwoord hier aan: het verschijnt dan automatisch op de FAQ-pagina,
   op de dienstpagina's, in de gestructureerde data en in llms.txt.
 """
-import json, os, html, re
+import json, os, html, re, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..", "site")      # hier schrijft het script de website naartoe
@@ -42,8 +42,7 @@ ORG = {
     "image": SITE + "/images/kim-berger-portret.jpg",
     "email": "k.berger@huma-advisory.com",
     "telephone": "+31620050351",
-    "address": {"@type": "PostalAddress", "streetAddress": "Van Esveldstraat 31-1", "postalCode": "3572 KK",
-                "addressLocality": "Utrecht", "addressRegion": "Utrecht", "addressCountry": "NL"},
+    "address": {"@type": "PostalAddress", "addressLocality": "Utrecht", "addressRegion": "Utrecht", "addressCountry": "NL"},
     "areaServed": [{"@type": "City", "name": "Utrecht"}, {"@type": "AdministrativeArea", "name": "Randstad"}, {"@type": "Country", "name": "Nederland"}],
     "founder": {"@id": PERSON_ID},
     "employee": {"@id": PERSON_ID},
@@ -186,6 +185,12 @@ PAGES = [
 ]
 
 
+def asset_version(rel):
+    """Korte vingerafdruk van een bestand: verandert de opmaak, dan laadt elke browser direct de nieuwe versie."""
+    with open(os.path.join(ROOT, rel), "rb") as f:
+        return hashlib.sha1(f.read()).hexdigest()[:10]
+
+
 def esc(s):
     return html.escape(s, quote=True)
 
@@ -254,16 +259,15 @@ FOOTER = '''<footer class="site-footer">
       <h2>Contact</h2>
       <address>
         <ul>
-          <li><strong class="footer__legal">Berger Advisory Holding B.V.</strong><br>handelend onder de naam BESYN</li>
+          <li><strong class="footer__legal">Berger Advisory Holding B.V.</strong></li>
           <li>Van Esveldstraat 31-1<br>3572 KK Utrecht</li>
           <li><a href="mailto:k.berger@huma-advisory.com">k.berger@huma-advisory.com</a></li>
-          <li><a href="tel:+31620050351">06&nbsp;2005&nbsp;0351</a></li>
         </ul>
       </address>
     </div>
   </div>
   <div class="container footer__bottom">
-    <p class="mb-0">&copy; <span data-year>2026</span> BESYN &middot; Berger Advisory Holding B.V. &middot; KvK&nbsp;42003724 &middot; btw&nbsp;NL869238772B01</p>
+    <p class="mb-0">&copy; <span data-year>2026</span> Berger Advisory Holding B.V. &middot; KvK&nbsp;42003724 &middot; btw&nbsp;NL869238772B01</p>
     <ul>
       <li><a href="/privacyverklaring/">Privacyverklaring</a></li>
       <li><a href="/algemene-voorwaarden/">Algemene voorwaarden</a></li>
@@ -371,8 +375,8 @@ def head(p):
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/source-serif-4-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.css">
-<script src="/assets/js/main.js"></script>{ld}
+<link rel="stylesheet" href="/assets/css/style.css?v={asset_version("assets/css/style.css")}">
+<script src="/assets/js/main.js?v={asset_version("assets/js/main.js")}"></script>{ld}
 </head>'''
 
 
@@ -424,10 +428,9 @@ def build():
              "- Oprichter: Kim Berger, executive coach en mediator; partner bij HUMA Advisory",
              "- Diensten: executive coaching (individueel en MT), zakelijke mediation",
              "- Doelgroep: ondernemers, DGA's, directeuren, bestuurders en managementteams",
-             "- Adres: Van Esveldstraat 31-1, 3572 KK Utrecht",
              "- Werkgebied: Utrecht, Randstad en online in heel Nederland",
              "- Contact: k.berger@huma-advisory.com, 06 2005 0351, www.besyn.nl/contact/",
-             "- Rechtspersoon: Berger Advisory Holding B.V., handelend onder de naam BESYN (KvK 42003724, btw NL869238772B01)", "",
+             "- Rechtspersoon: Berger Advisory Holding B.V. (KvK 42003724, btw NL869238772B01)", "",
              "## Pagina's", ""]
     for p in PAGES:
         if p.get("noindex") or p["path"] in ("/privacyverklaring/", "/algemene-voorwaarden/", "/cookiebeleid/"):
