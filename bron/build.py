@@ -39,7 +39,7 @@ ORG = {
     "slogan": "Mens, structuur, strategie – in synergie",
     "url": SITE + "/",
     "logo": {"@type": "ImageObject", "url": SITE + "/images/besyn-logo-schema.png", "width": 600, "height": 200},
-    "image": SITE + "/images/kim-berger-portret.jpg",
+    "image": OG,
     "email": "k.berger@huma-advisory.com",
     "telephone": "+31620050351",
     "address": {"@type": "PostalAddress", "addressLocality": "Utrecht", "addressRegion": "Utrecht", "addressCountry": "NL"},
@@ -191,6 +191,14 @@ def asset_version(rel):
         return hashlib.sha1(f.read()).hexdigest()[:10]
 
 
+def version_images(text):
+    """Zet een versienummer achter elke foto, zodat een vervangen foto direct overal zichtbaar is."""
+    def repl(m):
+        rel = m.group(2).lstrip("/")
+        return f'{m.group(1)}="{m.group(2)}?v={asset_version(rel)}"'
+    return re.sub(r'\b(src)="(/images/[^"?]+)"', repl, text)
+
+
 def esc(s):
     return html.escape(s, quote=True)
 
@@ -225,7 +233,7 @@ def header(active):
         {"".join(items)}
       </ul>
     </nav>
-    <a class="btn btn--gold header-cta" href="/contact/"{cur}><span class="lbl-long">Plan een kennismaking</span><span class="lbl-short">Kennismaken</span></a>
+    <a class="btn btn--gold header-cta" href="/contact/"{cur}><span class="lbl-long">Plan een kennismaking</span><span class="lbl-short">Contact</span></a>
   </div>
 </header>'''
 
@@ -260,7 +268,6 @@ FOOTER = '''<footer class="site-footer">
       <address>
         <ul>
           <li><strong class="footer__legal">Berger Advisory Holding B.V.</strong></li>
-          <li>Van Esveldstraat 31-1<br>3572 KK Utrecht</li>
           <li><a href="mailto:k.berger@huma-advisory.com">k.berger@huma-advisory.com</a></li>
         </ul>
       </address>
@@ -389,13 +396,14 @@ def build():
             body = body.replace("{{FAQ}}", faq_details(p["faqlist"]))
         body = body.replace("{{FAQ_TOC}}", toc).replace("{{FAQ_BLOCKS}}", faq_blocks)
         assert "{{" not in body, p["src"]
+        body = version_images(body)
         doc = f'''{head(p)}
 <body class="on-dark">
-{header(p["nav"])}
+{version_images(header(p["nav"]))}
 <main id="main">
 {body.strip()}
 </main>
-{FOOTER}
+{version_images(FOOTER)}
 </body>
 </html>
 '''

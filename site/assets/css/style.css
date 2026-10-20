@@ -166,32 +166,53 @@ strong { font-weight: 600; }
 .brand { display: inline-flex; align-items: center; text-decoration: none; line-height: 1; }
 .brand img { width: 150px; height: auto; }
 
-/* Menubalk: altijd zichtbaar (geen uitklapmenu) */
-.nav { margin-left: auto; }
-.nav__list { list-style: none; display: flex; gap: clamp(18px, 2.2vw, 32px); margin: 0; padding: 0; }
+/* Menubalk: altijd zichtbaar, op één lijn (logo · menu · knop), zonder uitklapmenu */
+.site-header__inner { flex-wrap: nowrap; }
+.nav { margin-left: auto; min-width: 0; }
+.nav__list { list-style: none; display: flex; align-items: center; gap: clamp(18px, 2vw, 30px); margin: 0; padding: 0; }
 .nav__list li { margin: 0; flex: none; }
-.site-header .nav__link { color: rgba(245, 245, 245, 0.88); text-decoration: none; font-weight: 500; font-size: 0.98rem; padding: 6px 0; position: relative; white-space: nowrap; display: inline-block; }
+.site-header .nav__link { color: rgba(245, 245, 245, 0.88); text-decoration: none; font-weight: 500; font-size: 0.98rem; line-height: 1.2; padding: 8px 0; position: relative; white-space: nowrap; display: inline-block; }
 .site-header .nav__link:hover, .site-header .nav__link[aria-current="page"] { color: #fff; }
-.nav__link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--gold); border-radius: 2px; }
+.nav__link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--gold); border-radius: 2px; }
 .header-cta { padding: 0.75em 1.3em; font-size: 0.95rem; flex: none; }
 .lbl-short { display: none; }
 
-/* Smallere schermen: logo + knop bovenaan, menu op een eigen, vaste regel eronder */
-@media (max-width: 1100px) {
-  .site-header__inner { flex-wrap: wrap; row-gap: 0; min-height: 0; padding-top: 14px; }
-  .header-cta { margin-left: auto; }
-  .nav { order: 3; flex: 1 0 100%; margin: 12px 0 0; border-top: 1px solid var(--line-dark); }
-  .nav__list { overflow-x: auto; scrollbar-width: none; padding: 11px 0 12px; gap: clamp(18px, 4vw, 34px); }
-  .nav__list::-webkit-scrollbar { display: none; }
-  .site-header .nav__link { font-size: 0.95rem; }
-  .nav__link[aria-current="page"]::after { bottom: 0; }
-  html { scroll-padding-top: 140px; }
+@media (max-width: 1180px) {
+  .site-header__inner { gap: 20px; }
+  .nav__list { gap: 20px; }
+  .site-header .nav__link { font-size: 0.94rem; }
+  .header-cta { padding: 0.7em 1.1em; font-size: 0.92rem; }
 }
-@media (max-width: 560px) {
-  .lbl-long { display: none; }
-  .lbl-short { display: inline; }
-  .nav__list { justify-content: space-between; gap: 14px; }
-  .header-cta { padding: 0.7em 1.1em; font-size: 0.9rem; }
+/* Korte menunamen (Coaching, FAQ) als de volledige namen niet passen */
+@media (max-width: 1040px) {
+  .nav .lbl-long { display: none; }
+  .nav .lbl-short { display: inline; }
+}
+@media (max-width: 800px) {
+  .brand img { width: 128px; }
+  .header-cta .lbl-long { display: none; }
+  .header-cta .lbl-short { display: inline; }
+}
+/* Telefoon: logo bovenaan, daaronder menu en knop samen op één regel */
+@media (max-width: 700px) {
+  .site-header__inner { flex-wrap: wrap; gap: 0 14px; min-height: 0; padding-top: 12px; }
+  .brand { flex: 1 0 100%; padding-bottom: 12px; border-bottom: 1px solid var(--line-dark); }
+  .nav { margin-left: 0; flex: 1 1 0; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav__list { gap: 14px; padding: 10px 0; }
+  .site-header .nav__link { font-size: 0.9rem; }
+  .header-cta { padding: 0.5em 0.95em; font-size: 0.86rem; }
+  html { scroll-padding-top: 130px; }
+}
+@media (max-width: 420px) {
+  .site-header__inner { column-gap: 10px; }
+  .nav__list { gap: 12px; }
+  .site-header .nav__link { font-size: 0.86rem; }
+  .header-cta { padding: 0.5em 0.8em; font-size: 0.82rem; }
+}
+@media (max-width: 360px) {
+  .nav__list { gap: 9px; }
+  .site-header .nav__link { font-size: 0.8rem; }
 }
 @media (max-width: 420px) { .brand img { width: 128px; } }
 
@@ -629,3 +650,17 @@ h1, h2 { overflow-wrap: break-word; }
 .panel .contact-list a { font-size: 1.02rem; overflow-wrap: anywhere; }
 .panel .contact-list li { color: var(--ink); font-size: 0.95rem; }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 340px) { .nav__list { gap: 7px; } .site-header .nav__link { font-size: 0.75rem; } .header-cta { padding: 0.45em 0.65em; font-size: 0.76rem; } .site-header__inner { column-gap: 8px; } }
+
+/* Profielfoto Over Kim: staand en compacter */
+.page-hero__portrait { aspect-ratio: 4 / 5; width: min(100%, 330px); justify-self: end; box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.55); }
+.page-hero__portrait img { object-position: 50% 30%; }
+@media (max-width: 860px) { .page-hero__portrait { width: min(62%, 260px); justify-self: start; } }
+
+/* Kernovertuiging met vage foto van de hei (met Bobby) als achtergrond */
+.belief-band { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(96px, 13vw, 170px); background: var(--deep); }
+.belief-band__bg { position: absolute; inset: 0; z-index: -1; }
+.belief-band__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 55%; opacity: 0.42; filter: saturate(0.85) blur(1.5px); transform: scale(1.03); }
+.belief-band__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 59, 58, 0.88) 0%, rgba(0, 59, 58, 0.6) 55%, rgba(0, 59, 58, 0.35) 100%); }
+@media (max-width: 760px) { .belief-band__bg img { object-position: 78% 50%; } .belief-band__bg::after { background: rgba(0, 59, 58, 0.72); } }
+.belief { padding-inline: var(--gutter); }
