@@ -75,7 +75,9 @@ PERSON = {
     "hasOccupation": {"@type": "Occupation", "name": "Executive coach en mediator",
                       "occupationLocation": {"@type": "City", "name": "Utrecht"}},
     "knowsAbout": ["Executive coaching", "Leiderschap", "Besluitvorming", "Zakelijke mediation",
-                   "Fusies en overnames", "Bedrijfsopvolging", "Generatiewissel", "Strategie", "Governance"],
+                   "Fusies en overnames", "Bedrijfsopvolging", "Generatiewissel", "Strategie", "Governance",
+                   "Teamcoaching", "Turnaround", "M&A-voorbereiding", "Deal readiness", "Synergieonderzoek",
+                   "Marktanalyse", "Concurrentieanalyse", "Waardeanalyse", "Businessplannen", "Positionering"],
     "knowsLanguage": ["nl", "en"],
     "sameAs": [LINKEDIN],
 }
@@ -88,17 +90,19 @@ WEBSITE = {
 FAQ = [
     ("Executive coaching", "executive-coaching", [
         ("Wat is executive coaching?",
-         "Executive coaching is persoonlijke, vertrouwelijke begeleiding van leiders met eindverantwoordelijkheid, zoals DGA's, directeuren en MT-leden. Het richt zich op concrete vraagstukken uit de praktijk: leiderschap, besluitvorming, samenwerking in de top en rolverandering. Anders dan bij een training werkt u aan uw eigen situatie en doelen."),
+         "Executive coaching is persoonlijke, vertrouwelijke begeleiding van leiders met eindverantwoordelijkheid, zoals DGA's, directeuren en MT-leden. Het richt zich op concrete vraagstukken uit de praktijk: leiderschap, besluitvorming, samenwerking in de top en rolverandering. Anders dan bij een training werk je aan je eigen situatie en doelen."),
         ("Voor wie is executive coaching bij BESYN bedoeld?",
          "Voor ondernemers, DGA's, directeuren, bestuurders, partners en MT-leden, en voor beoogde opvolgers. BESYN coacht individueel en werkt ook met managementteams als geheel."),
         ("Met welke vraagstukken kan ik bij BESYN terecht?",
          "Onder meer met vragen over impact en positie als leider, besluitvorming onder druk, rolverandering bij overname, fusie of opvolging, afstand nemen van het eigen bedrijf, generatiewissels in familiebedrijven, spanningen tussen aandeelhouders en directie, belastbaarheid en de effectiviteit van het managementteam."),
         ("Hoe ziet een coachtraject eruit?",
-         "Na een vrijblijvende kennismaking legt u in een intake doelen en succescriteria vast. Een traject start doorgaans met vier sessies van ongeveer anderhalf uur. Daarna evalueert u het resultaat en bepaalt u samen met Kim Berger of en hoe het traject verdergaat."),
+         "Na een vrijblijvende kennismaking leg je in een intake doelen en succescriteria vast. Een traject start doorgaans met vier sessies van ongeveer anderhalf uur, in overleg om de twee à vier weken. Daarna evalueer je het resultaat en bepaal je samen met Kim Berger of en hoe het traject verdergaat."),
         ("Wat levert executive coaching op?",
-         "Meer helderheid over uw rol en koers, beter onderbouwde besluiten, meer impact als leider en een team dat beter samenwerkt. Welke resultaten passend zijn, wordt bij de start vastgelegd en aan het eind getoetst."),
+         "Meer helderheid over je rol en koers, beter onderbouwde besluiten, meer impact als leider en een team dat beter samenwerkt. Welke resultaten passend zijn, wordt bij de start vastgelegd en aan het eind getoetst."),
         ("Welke methoden gebruikt BESYN?",
-         "Kim Berger combineert een zakelijke, doelgerichte aanpak met beproefde methoden zoals Rationeel-Emotieve Therapie (RET), Gestalt, voice dialogue en ervaringsgerichte werkvormen. De aanpak wordt afgestemd op uw vraag en uw stijl."),
+         "Kim Berger combineert een zakelijke, doelgerichte aanpak met beproefde methoden zoals Rationeel-Emotieve Therapie (RET), Gestalt, voice dialogue, ervaringsgerichte werkvormen en rollenspel. De aanpak wordt afgestemd op je vraag en je stijl."),
+        ("Wat is het verschil tussen coaching en therapie?",
+         "Coaching richt zich op je functioneren en ontwikkeling als leider. Persoonlijke onderwerpen komen soms aan bod, omdat werk en leven niet los van elkaar staan, maar coaching is geen behandeling. Blijkt dat andere hulp beter past, bijvoorbeeld therapie, dan bespreekt Kim Berger dat open met je en denkt zij mee over passende begeleiding."),
     ]),
     ("Zakelijke mediation", "zakelijke-mediation", [
         ("Wat is zakelijke mediation?",
@@ -114,38 +118,40 @@ FAQ = [
     ]),
     ("Praktisch", "praktisch", [
         ("Wat kost executive coaching of mediation bij BESYN?",
-         "Elk traject is maatwerk. Na de kennismaking ontvangt u een voorstel dat past bij uw vraag; werken op basis van een uurtarief is ook mogelijk. Alle tarieven zijn exclusief btw."),
+         "Elk traject is maatwerk. Na de kennismaking ontvang je een voorstel dat past bij je vraag; werken op basis van een uurtarief is ook mogelijk. Alle tarieven zijn exclusief btw."),
         ("Kan mijn organisatie de kosten betalen?",
          "Ja, dat is gebruikelijk. Doelen en voortgang worden dan desgewenst op hoofdlijnen afgestemd met de opdrachtgever. De inhoud van de gesprekken blijft altijd vertrouwelijk."),
         ("Waar vinden de gesprekken plaats?",
-         "In Utrecht, op uw locatie of online. BESYN werkt voor ondernemingen in Utrecht, de Randstad en de rest van Nederland."),
+         "In Utrecht, op jouw locatie of online. BESYN werkt voor ondernemingen in Utrecht, de Randstad en de rest van Nederland."),
         ("Hoe wordt vertrouwelijkheid gewaarborgd?",
-         "Alles wat u deelt is vertrouwelijk en wordt nooit zonder uw toestemming gedeeld, ook niet met de opdrachtgever. BESYN werkt volgens een strikte beroepscode en gaat zorgvuldig om met persoonsgegevens, zoals beschreven in de privacyverklaring."),
+         "Alles wat je deelt is vertrouwelijk en wordt nooit zonder jouw toestemming gedeeld, ook niet met de opdrachtgever. BESYN werkt volgens een strikte beroepscode en gaat zorgvuldig om met persoonsgegevens, zoals beschreven in de privacyverklaring."),
         ("Hoe plan ik een kennismaking?",
-         "Via het contactformulier op deze website, per e-mail via k.berger@huma-advisory.com of telefonisch via 06 2005 0351. Kim Berger neemt persoonlijk contact met u op."),
+         "Via het contactformulier op deze website, per e-mail via k.berger@huma-advisory.com of telefonisch via 06 2005 0351. Kim Berger neemt persoonlijk contact met je op."),
     ]),
     ("Over BESYN en Kim Berger", "over-besyn", [
         ("Wat is BESYN?",
          "BESYN is een praktijk voor executive coaching en zakelijke mediation in Utrecht, opgericht door Kim Berger. BESYN begeleidt ondernemers, DGA's en directies bij leiderschap, besluitvorming en samenwerking, in het bijzonder rond groei, overname en opvolging."),
         ("Wie is Kim Berger?",
          "Kim Berger (MSc Bedrijfskunde) is executive coach en mediator en de oprichter van BESYN. Zij heeft acht jaar ervaring in fusies en overnames en strategie. Als director bij Exit Ready begeleidde zij veel ondernemers bij het loslaten van hun bedrijf en bij generatiewissels. Zij is partner bij HUMA Advisory."),
+        ("Hoe werkt Kim Berger als coach?",
+         "Direct, nuchter en betrokken. Kim stelt gerichte vragen, benoemt wat zij ziet en laat je nieuwe situaties ook ervaren en oefenen, bijvoorbeeld in een rollenspel. Ze werkt methodisch en doelgericht, en stemt haar aanpak af op je doelen en je manier van denken. Een klimaat van vertrouwen is daarbij de basis."),
         ("Wat is de relatie tussen BESYN en HUMA Advisory?",
-         "Kim Berger is partner bij HUMA Advisory, een onafhankelijk adviesbureau in Utrecht voor leiderschap, governance en gedrag rond transacties. Speelt uw vraagstuk ook op organisatieniveau, dan kan BESYN de expertise van HUMA betrekken. Coaching en mediation zijn ook los af te nemen."),
+         "Kim Berger is partner bij HUMA Advisory, een onafhankelijk adviesbureau in Utrecht voor leiderschap, governance en gedrag rond transacties. Speelt je vraagstuk ook op organisatieniveau, dan kan BESYN de expertise van HUMA betrekken. Coaching en mediation zijn ook los af te nemen."),
     ]),
 ]
 FAQ_INDEX = {q: a for _, _, items in FAQ for q, a in items}
-FAQ_HOME = ["Wat is BESYN?", "Wat is executive coaching?", "Wat is zakelijke mediation?",
-            "Wat kost executive coaching of mediation bij BESYN?", "Waar vinden de gesprekken plaats?"]
-FAQ_COACHING = ["Hoe ziet een coachtraject eruit?", "Kan mijn organisatie de kosten betalen?",
-                "Wat kost executive coaching of mediation bij BESYN?", "Hoe wordt vertrouwelijkheid gewaarborgd?"]
-FAQ_MEDIATION = ["Is mediation vertrouwelijk?", "Wanneer kies je voor mediation in plaats van een juridische procedure?",
+FAQ_HOME = ["Wat kost executive coaching of mediation bij BESYN?", "Kan mijn organisatie de kosten betalen?",
+            "Waar vinden de gesprekken plaats?"]
+FAQ_COACHING = ["Wat is het verschil tussen coaching en therapie?", "Wat kost executive coaching of mediation bij BESYN?",
+                "Kan mijn organisatie de kosten betalen?", "Hoe wordt vertrouwelijkheid gewaarborgd?"]
+FAQ_MEDIATION = ["Wanneer kies je voor mediation in plaats van een juridische procedure?",
                  "Wat kost executive coaching of mediation bij BESYN?", "Waar vinden de gesprekken plaats?"]
 
 PAGES = [
     dict(src="home.html", out="index.html", path="/", nav=None,
          title="Executive coaching & zakelijke mediation Utrecht | BESYN",
          desc="BESYN begeleidt ondernemers, DGA's en directies met executive coaching en zakelijke mediation. Opgericht door Kim Berger, Utrecht. Plan een kennismaking.",
-         kind="home", faqlist=FAQ_HOME),
+         kind="home"),
     dict(src="coaching.html", out="executive-coaching/index.html", path="/executive-coaching/", nav="/executive-coaching/",
          title="Executive coaching voor DGA's en directies | BESYN Utrecht",
          desc="Executive coaching voor DGA's, directeuren en MT's: leiderschap, besluitvorming en rolverandering bij overname of opvolging. In Utrecht en online.",
@@ -156,7 +162,7 @@ PAGES = [
          crumb="Zakelijke mediation", kind="service", service="Zakelijke mediation", faqlist=FAQ_MEDIATION),
     dict(src="over-kim.html", out="kim-berger/index.html", path="/kim-berger/", nav="/kim-berger/",
          title="Kim Berger – executive coach en mediator | BESYN",
-         desc="Kim Berger (MSc Bedrijfskunde) is executive coach en mediator in Utrecht, oprichter van BESYN en partner bij HUMA Advisory. Achtergrond in M&A en strategie.",
+         desc="Kim Berger, executive coach en mediator in Utrecht: direct, nuchter en betrokken, met acht jaar M&A-ervaring en veel levenservaring. Lees haar visie en aanpak.",
          crumb="Kim Berger", kind="profile", ogtype="profile"),
     dict(src="faq.html", out="veelgestelde-vragen/index.html", path="/veelgestelde-vragen/", nav="/veelgestelde-vragen/",
          title="Veelgestelde vragen over coaching en mediation | BESYN",
@@ -167,7 +173,7 @@ PAGES = [
          desc="Plan een vrijblijvende kennismaking met BESYN over executive coaching of zakelijke mediation. Bel 06 2005 0351 of stuur een bericht.",
          crumb="Contact", kind="contact"),
     dict(src="bedankt.html", out="contact/bedankt/index.html", path="/contact/bedankt/", nav="/contact/",
-         title="Bedankt voor uw bericht | BESYN", desc="Uw bericht is verzonden.", noindex=True),
+         title="Bedankt voor je bericht | BESYN", desc="Je bericht is verzonden.", noindex=True),
     dict(src="privacyverklaring.html", out="privacyverklaring/index.html", path="/privacyverklaring/", nav=None,
          title="Privacyverklaring | BESYN",
          desc="Hoe BESYN (Kim Berger) omgaat met persoonsgegevens van cliënten en websitebezoekers.",
@@ -259,6 +265,7 @@ FOOTER = '''<footer class="site-footer">
       <h2>Over</h2>
       <ul>
         <li><a href="/kim-berger/">Kim Berger</a></li>
+        <li><a href="/kim-berger/#ervaring-expertise">Ervaring &amp; expertise</a></li>
         <li><a href="https://www.huma-advisory.com/" rel="noopener">HUMA Advisory ↗</a></li>
         <li><a class="social" href="https://www.linkedin.com/in/kimbergerexitready/" rel="noopener me"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></li>
       </ul>
@@ -435,6 +442,8 @@ def build():
              "- Naam: BESYN (merkregel: \"Mens, structuur, strategie – in synergie\")",
              "- Oprichter: Kim Berger, executive coach en mediator; partner bij HUMA Advisory",
              "- Diensten: executive coaching (individueel en MT), zakelijke mediation",
+             "- Ervaring: acht jaar M&A en strategie; director bij Exit Ready (begeleiding van ondernemers bij afstand nemen, loslaten en generatiewissels); partner bij HUMA Advisory",
+             "- Expertise: leiderschap en teamcoaching, mediation in de top, governance, turnaround- en verbetertrajecten, synergie-onderzoeken, M&A-voorbereiding en deal readiness, strategische groei, markt- en concurrentieanalyses, financiële ratio- en waardeanalyses, businessplannen en positionering",
              "- Doelgroep: ondernemers, DGA's, directeuren, bestuurders en managementteams",
              "- Werkgebied: Utrecht, Randstad en online in heel Nederland",
              "- Contact: k.berger@huma-advisory.com, 06 2005 0351, www.besyn.nl/contact/",
