@@ -821,3 +821,20 @@ h3 { font-size: clamp(1.1rem, 1.05rem + 0.3vw, 1.3rem); }
   .belief-band > .container { width: 100%; }
   .belief-band__bg img { object-position: 72% 25%; }
 }
+
+/* HUMA-blok als lichte kaart, zodat de pagina niet alleen uit groen bestaat */
+.partner { background: var(--ivory); border: 0; color: var(--ink); box-shadow: var(--shadow); }
+.partner h2 { color: var(--petrol); }
+.partner .muted { color: var(--muted); }
+.partner .eyebrow { color: var(--gold-deep); }
+.partner .btn--ghost { color: var(--petrol); border-color: var(--petrol); }
+.partner .btn--ghost:hover { background: var(--petrol); color: var(--ivory); border-color: var(--petrol); }
+/* Opsommingen in de dienstkaarten op de homepage */
+.offer ul { margin: 0.2rem 0 1.6rem; }
+.offer li { font-size: 0.95rem; }
+
+/* Subtiele gelaagdheid: afwisselend iets lichtere en iets diepere petroltinten */
+:root { --petrol-soft: #0c4f4d; --petrol-deep: #003938; }
+.section--paper { background: var(--petrol-soft); }
+.section--dark { background: var(--petrol-deep); }
+.section--paper .q-card, .section--paper .pillars li, .section--paper .steps li { border-top-color: rgba(245, 245, 245, 0.2); }
