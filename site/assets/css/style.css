@@ -664,3 +664,160 @@ h1, h2 { overflow-wrap: break-word; }
 .belief-band__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 59, 58, 0.88) 0%, rgba(0, 59, 58, 0.6) 55%, rgba(0, 59, 58, 0.35) 100%); }
 @media (max-width: 760px) { .belief-band__bg img { object-position: 78% 50%; } .belief-band__bg::after { background: rgba(0, 59, 58, 0.72); } }
 .belief { padding-inline: var(--gutter); }
+
+/* ==========================================================================
+   Rustiger ontwerp, in de geest van het oorspronkelijke besyn.nl:
+   één doorlopende petrolkleur, lichtere letters, minder kaders en accenten.
+   ========================================================================== */
+body.on-dark { color: rgba(245, 245, 245, 0.86); font-weight: 350; }
+.hero, .page-hero, .section--paper, .section--dark { background: var(--petrol); }
+.site-header { border-bottom-color: rgba(245, 245, 245, 0.08); }
+.site-footer { background: var(--petrol); border-top: 1px solid rgba(245, 245, 245, 0.08); }
+h1, h2 { font-weight: 400; }
+h2 { font-size: clamp(1.8rem, 1.35rem + 1.8vw, 2.6rem); }
+strong { font-weight: 600; }
+
+/* Accenten spaarzaam: alleen de hoofdkop houdt het gouden cursief */
+h2 em, h3 em, .on-dark h2 em, .on-dark h3 em { font-style: normal; color: inherit; }
+.on-dark .statement em { color: rgba(245, 245, 245, 0.92); font-style: italic; }
+
+/* Labels boven de koppen: kleiner en zonder icoontje */
+.eyebrow::before, .h1-kicker::before { display: none; }
+.eyebrow, .h1-kicker { font-size: 0.72rem; letter-spacing: 0.14em; font-weight: 600; }
+.on-dark .eyebrow, .h1-kicker { color: rgba(220, 191, 87, 0.85); }
+
+/* Watermerk alleen nog subtiel bovenaan de pagina */
+.section.watermark::before { display: none; }
+.hero.watermark::before, .page-hero.watermark::before { opacity: 0.07; }
+
+/* Knoppen als pil, zoals op het origineel; menuknop als rustige omlijning */
+.btn { border-radius: 999px; font-weight: 600; }
+.site-header .nav__link { font-weight: 400; }
+.header-cta { background: transparent; color: var(--gold); border-color: rgba(220, 191, 87, 0.75); }
+.header-cta:hover { background: var(--gold); color: var(--petrol); border-color: var(--gold); }
+
+/* Vraagstukken, pijlers, stappen en resultaten zonder kaarten: alleen een dunne lijn */
+.q-card { background: transparent; border: 0; border-top: 1px solid var(--line-dark); border-radius: 0; padding: 22px 0 0; color: inherit; }
+.q-card:hover { transform: none; box-shadow: none; border-color: var(--line-dark); }
+.questions { gap: 36px 40px; }
+.q-card__q { color: #fff; font-style: normal; font-size: 1.2rem; }
+.q-card__a { color: rgba(245, 245, 245, 0.72); }
+.q-card__theme, .q-card__theme::before { color: rgba(220, 191, 87, 0.85); }
+.on-dark .pillars li { background: transparent; border: 0; border-top: 1px solid var(--line-dark); border-radius: 0; padding: 24px 0 0; }
+.steps li, .section--paper .steps li, .on-dark .steps li { background: transparent; border: 0; border-top: 1px solid var(--line-dark); border-radius: 0; padding: 22px 0 0; }
+.results__col { background: transparent; border: 0; border-top: 1px solid var(--line-dark); border-radius: 0; padding: 22px 0 0; }
+
+/* HUMA-blok: lijn in plaats van witte kaart */
+.partner { background: transparent; border: 1px solid var(--line-dark); color: inherit; }
+.partner h2 { color: #fff; }
+.partner .muted { color: rgba(245, 245, 245, 0.74); }
+.partner .eyebrow { color: rgba(220, 191, 87, 0.85); }
+.partner .btn--ghost { color: var(--ivory); border-color: rgba(245, 245, 245, 0.6); }
+.partner .btn--ghost:hover { background: var(--ivory); color: var(--petrol); border-color: var(--ivory); }
+
+/* Contactpagina: formulier blijft wit, zijkolom rustig op petrol */
+.contact-aside { background: transparent; border-color: var(--line-dark); color: inherit; }
+.contact-aside .h3 { color: #fff; }
+.contact-person { border-bottom-color: var(--line-dark); }
+.contact-person strong { color: #fff; }
+.contact-person p, .contact-aside .mini-steps { color: rgba(245, 245, 245, 0.78); }
+.contact-aside .mini-steps li::marker { color: var(--gold); }
+.panel.contact-aside .contact-list li, .panel.contact-aside .contact-list li:last-child { border-color: var(--line-dark); color: rgba(245, 245, 245, 0.86); }
+.panel.contact-aside .contact-list span { color: rgba(220, 191, 87, 0.85); }
+.contact-aside a:not(.btn) { color: var(--gold); }
+
+/* Citaatblok: zelfde petrol als de rest */
+.belief-band { background: var(--petrol); }
+.belief-band__bg::after { background: linear-gradient(90deg, rgba(0, 68, 67, 0.9) 0%, rgba(0, 68, 67, 0.62) 55%, rgba(0, 68, 67, 0.38) 100%); }
+@media (max-width: 760px) { .belief-band__bg::after { background: rgba(0, 68, 67, 0.75); } }
+.q-card .q-card__q { color: #fff; }
+
+/* Ervaring & expertise (profielpagina) */
+#ervaring-expertise { scroll-margin-top: 0; }
+.pillars--list h3 { margin-bottom: 14px; }
+.expertise-list { list-style: none; padding: 0; margin: 0; }
+.expertise-list li { margin: 0; padding: 10px 0; border-bottom: 1px solid var(--line-dark); color: rgba(245, 245, 245, 0.82); line-height: 1.45; }
+.expertise-list li:last-child { border-bottom: 0; }
+#ervaring-expertise + .section { padding-top: 0; }
+.link-row { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 0; }
+
+/* Profielpagina: navigatie binnen de pagina, ankers en 'past dit bij u' */
+.page-nav { margin-top: clamp(26px, 3.5vw, 36px); }
+.page-nav ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.page-nav li { margin: 0; }
+.page-nav a { display: inline-block; padding: 7px 14px; border: 1px solid var(--line-dark); border-radius: 999px; color: rgba(245, 245, 245, 0.88); text-decoration: none; font-size: 0.88rem; line-height: 1.3; transition: border-color .2s ease, color .2s ease; }
+.page-nav a:hover, .page-nav a:focus-visible { border-color: var(--gold); color: #fff; }
+.principles.mt-0 { margin-top: 0; }
+.checklist--niet li::before, .on-dark .checklist--niet li::before { background-color: rgba(245, 245, 245, 0.08); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M7 12h10'/%3E%3C/svg%3E"); }
+.checklist--niet li { color: rgba(245, 245, 245, 0.78); }
+#past-dit .btn-row { margin-top: clamp(28px, 4vw, 40px); align-items: center; }
+.gevormd__media { position: sticky; top: 112px; }
+@media (max-width: 860px) { .gevormd__media { position: static; max-width: 420px; } }
+.prose .eyebrow + h2 { margin-top: 0; }
+
+/* =====================================================================
+   Typografie een stap rustiger (in lijn met het oorspronkelijke besyn.nl:
+   lopende tekst 16px, kleinere koppen, minder grote accentregels)
+   ===================================================================== */
+body { font-size: 1rem; line-height: 1.65; }
+h1 { font-size: clamp(2.2rem, 1.5rem + 2.6vw, 3.6rem); }
+.hero h1 { font-size: clamp(2.3rem, 1.5rem + 2.8vw, 3.85rem); }
+.page-hero h1 { font-size: clamp(2.1rem, 1.5rem + 2.2vw, 3.3rem); }
+h2 { font-size: clamp(1.6rem, 1.3rem + 1.1vw, 2.2rem); line-height: 1.18; }
+.prose h2, .partner h2, .definition h2 { font-size: clamp(1.45rem, 1.25rem + 0.8vw, 1.9rem); }
+.faq-group h2 { font-size: clamp(1.45rem, 1.25rem + 0.8vw, 1.95rem); }
+h3 { font-size: clamp(1.1rem, 1.05rem + 0.3vw, 1.3rem); }
+.lead { font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.12rem); line-height: 1.65; }
+.statement { font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.55rem); }
+.definition p { font-size: 1.04rem; }
+.pillars h3 { font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem); }
+.offer h3 { font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.6rem); }
+.synergy { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); }
+.belief p { font-size: clamp(1.3rem, 1.05rem + 1vw, 1.85rem); }
+.q-card__q { font-size: 1.1rem; }
+.principles h3 { font-size: 1.08rem; }
+.principles p, .steps p, .q-card__a { font-size: 0.94rem; }
+.facts dd { font-size: 1.02rem; }
+.bio-quote p { font-size: 1.1rem; }
+.quote blockquote { font-size: 1.06rem; }
+.faq summary { font-size: 1rem; }
+.past-dit__more { margin: clamp(24px, 3vw, 32px) 0 0; }
+/* Eén achtergrondkleur: iets minder witruimte tussen secties, zodat de pagina als één geheel leest */
+:root { --section: clamp(56px, 7vw, 96px); }
+
+/* Getuigenissen met naam (LinkedIn-aanbevelingen) */
+.testimonial { margin: 0; padding: 0 0 0 clamp(20px, 3vw, 32px); border-left: 2px solid var(--gold); }
+.testimonial blockquote { margin: 0 0 1rem; }
+.testimonial blockquote p { margin: 0; font-family: var(--serif); font-size: clamp(1.08rem, 1rem + 0.35vw, 1.3rem); line-height: 1.55; color: #fff; }
+.testimonial figcaption { font-size: 0.9rem; color: rgba(245, 245, 245, 0.75); }
+.testimonial figcaption strong { color: var(--gold); font-weight: 600; }
+.testimonial--featured { max-width: 860px; margin-bottom: clamp(32px, 4vw, 48px); }
+
+/* Praktische informatie executive coaching */
+.practical { margin-top: clamp(36px, 5vw, 56px); }
+.practical h3 { margin: 0 0 14px; color: #fff; }
+.practical__list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0 24px; margin: 0; }
+.practical__list > div { border-top: 1px solid var(--line-dark); padding: 16px 0 0; }
+.practical__list dt { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+.practical__list dd { margin: 0; font-size: 0.95rem; color: rgba(245, 245, 245, 0.86); line-height: 1.5; }
+@media (max-width: 980px) { .practical__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; } }
+@media (max-width: 480px) { .practical__list { grid-template-columns: 1fr; } }
+
+/* Citaatband homepage: foto van Kim en Bobby scherp in beeld, tekst links op het donkere deel van de foto */
+.belief-band { padding-block: clamp(110px, 14vw, 200px); }
+.belief-band__bg img { opacity: 1; filter: none; transform: none; object-position: 72% 88%; }
+.belief-band__bg::after { background: linear-gradient(90deg, rgba(0, 68, 67, 0.72) 0%, rgba(0, 68, 67, 0.35) 38%, rgba(0, 68, 67, 0) 62%); }
+.belief-band .belief { margin: 0; max-width: 560px; text-align: left; padding-inline: 0; }
+.belief-band .belief .stijl { margin-inline: 0; background-position: left center; }
+.belief-band .belief p { text-wrap: pretty; }
+@media (max-width: 860px) {
+  .belief-band { padding-block: 0 clamp(56px, 10vw, 80px); }
+  .belief-band__bg { position: relative; inset: auto; height: clamp(320px, 92vw, 560px); margin-bottom: clamp(28px, 6vw, 44px); }
+  .belief-band__bg img { object-position: 80% 85%; }
+  .belief-band__bg::after { background: linear-gradient(180deg, rgba(0, 68, 67, 0) 72%, rgba(0, 68, 67, 1) 100%); }
+}
+@media (min-width: 861px) {
+  .belief-band { display: flex; align-items: center; aspect-ratio: 2 / 1; max-height: 880px; padding-block: 64px; }
+  .belief-band > .container { width: 100%; }
+  .belief-band__bg img { object-position: 72% 25%; }
+}
